@@ -15,6 +15,12 @@ public class WASD_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Declare variables
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        float speed = 5.0f;
+
+        //Add the changes to the object
+        transform.position += new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
     }
 }
