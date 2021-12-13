@@ -15,8 +15,6 @@ public class WASD_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.Find("Player");
-        size += 0.1f;
-        player.transform.position = new Vector3(size, 0, 0);
+        
     }
 }

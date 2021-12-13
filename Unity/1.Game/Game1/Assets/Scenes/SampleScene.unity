@@ -415,10 +415,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107639157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e585c78e67517104e84c52dcc8d128c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 73cca46b47332a646b0e9a87e759439b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0.1
+  sensitivity: 15
 --- !u!4 &1107639159
 Transform:
   m_ObjectHideFlags: 0
