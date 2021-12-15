@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Look_Around : MonoBehaviour
+public class Look_Up_and_Down : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,6 @@ public class Look_Around : MonoBehaviour
     void Update()
     {
         //Calculate the moved sensivity
-        rotationY += Input.GetAxis("Mouse X") * sensitivity;
         rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
 
         //Put the sensivity

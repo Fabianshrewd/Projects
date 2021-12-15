@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WASD_Movement : MonoBehaviour
 {
-    public float size = 0.1f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +19,8 @@ public class WASD_Movement : MonoBehaviour
         float speed = 5.0f;
 
         //Add the changes to the object
-        transform.position += new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
+        if(Input.GetKey(KeyCode.W)) {
+             transform.position += transform.forward * Time.deltaTime * speed;
+        }
     }
 }
