@@ -20,9 +20,9 @@ Added the sketch.
 ```
 
 ## Minecraft 2D
-´´´
+```
 Added the whole game.
-´´´
+```
 
 ## Sensor with Wifi
 ```
