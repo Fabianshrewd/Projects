@@ -63,9 +63,14 @@ namespace Game1
 	   t.Start();
 
 	   //Edit the bitmap movement
-	   for(int i = 0; i < 1000; i++)
+	   for(int i = 0; i < 200; i++)
 	   {
 	   	form1.editpixel(0, 100+i, 0, 100+i);
+
+		if(i % 10 == 0)
+		{
+		   Thread.Sleep(1000);
+		}
 	   }
 	}
     }
