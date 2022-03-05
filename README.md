@@ -14,3 +14,8 @@ Added the first steps.
 ```
 Games created from Scratch.
 ```
+
+## Pygame
+```
+Games made with pygame.
+```
