@@ -44,7 +44,8 @@ done = False
 clock = pygame.time.Clock()
 
 #Create an player
-player = Creature(100, 100, 100, 100, (30, 30, 30, 30))
+player = Creature(100, 100, 100, 100, (20, 20, 20))
+player2 = Creature(300, 300, 100, 100, (30, 30, 30))
 
 #Check if Pygame should be closed
 while not done:
@@ -58,6 +59,7 @@ while not done:
     
     #Show the character and check for movement
     player.movement_display(screen)
+    player2.movement_display(screen)
 
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_w]:
@@ -68,6 +70,15 @@ while not done:
         player.movement_keys("a")
     if pressed[pygame.K_d]:
         player.movement_keys("d")
+    
+    if pressed[pygame.K_i]:
+        player2.movement_keys("w")
+    if pressed[pygame.K_k]:
+        player2.movement_keys("s")
+    if pressed[pygame.K_j]:
+        player2.movement_keys("a")
+    if pressed[pygame.K_l]:
+        player2.movement_keys("d")
 
     #Make a clock so it runs slower
     clock.tick(1000)
