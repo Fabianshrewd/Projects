@@ -7,6 +7,7 @@ class Creature():
     pos_y = int(0)
     size_x = int(0)
     size_y = int(0)
+    rect_stats = pygame.Rect(pos_x, pos_y, size_x, size_y)
     color = (50, 50, 50)
 
     #init
@@ -16,6 +17,10 @@ class Creature():
         self.size_x = x2
         self.size_y = y2
         self.color = c
+
+    #Update the Rect
+    def updateRect(self):
+        self.rect_stats = pygame.Rect(self.pos_x, self.pos_y, self.size_x, self.size_y)
 
     #Movement by Command
     def movement_display(self, screen):
@@ -35,6 +40,21 @@ class Creature():
 #function draw rectangle
 def Rectangle(screen, color, pos_x, pos_y, size_x, size_y):
     pygame.draw.rect(screen, color, pygame.Rect(pos_x, pos_y, size_x, size_y))
+
+#Collider
+def collider_object_x(object1, object2, axes):
+    object1.x += axes
+    if pygame.Rect.colliderect(object1, object2):
+        return False
+    else:
+        return True
+
+def collider_object_y(object1, object2, axes):
+    object1.y += axes
+    if pygame.Rect.colliderect(object1, object2):
+        return False
+    else:
+        return True
 
 #Main Program
 #Start pygame
@@ -60,24 +80,29 @@ while not done:
     #Show the character and check for movement
     player.movement_display(screen)
     player2.movement_display(screen)
-
+   
+    #Build the Rect for the collider
+    player.updateRect()
+    player2.updateRect()
+    
+    #Check which buttons are pressed
     pressed = pygame.key.get_pressed()
-    if pressed[pygame.K_w]:
+    if pressed[pygame.K_w] and collider_object_y(player.rect_stats, player2.rect_stats, -1):
         player.movement_keys("w")
-    if pressed[pygame.K_s]:
+    if pressed[pygame.K_s] and collider_object_y(player.rect_stats, player2.rect_stats, 1):
         player.movement_keys("s")
-    if pressed[pygame.K_a]:
+    if pressed[pygame.K_a] and collider_object_x(player.rect_stats, player2.rect_stats, -1):
         player.movement_keys("a")
-    if pressed[pygame.K_d]:
+    if pressed[pygame.K_d] and collider_object_x(player.rect_stats, player2.rect_stats, 1):
         player.movement_keys("d")
     
-    if pressed[pygame.K_i]:
+    if pressed[pygame.K_i] and collider_object_y(player.rect_stats, player2.rect_stats, 1):
         player2.movement_keys("w")
-    if pressed[pygame.K_k]:
+    if pressed[pygame.K_k] and collider_object_y(player.rect_stats, player2.rect_stats, -1):
         player2.movement_keys("s")
-    if pressed[pygame.K_j]:
+    if pressed[pygame.K_j] and collider_object_x(player.rect_stats, player2.rect_stats, 1):
         player2.movement_keys("a")
-    if pressed[pygame.K_l]:
+    if pressed[pygame.K_l] and collider_object_x(player.rect_stats, player2.rect_stats, -1):
         player2.movement_keys("d")
 
     #Make a clock so it runs slower
