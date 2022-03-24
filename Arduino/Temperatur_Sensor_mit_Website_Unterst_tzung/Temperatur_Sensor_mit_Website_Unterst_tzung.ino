@@ -17,17 +17,17 @@ SoftwareSerial esp8266(RX,TX);
 
 //Add variables for the wifi
 //WLAN SSID
-String AP = "HUAWEI-B535-A279";
+String AP = "";
 //WLAN Password
-String PASS = "B9JJ7FT48Q5";
+String PASS = "";
 
 //Varibles for the destination websites
-String API = "DJYW17FHGTQOUG9Y";
+String API = "";
 String HOST = "api.thingspeak.com";
 String PORT = "80";
 
 //Variables for an php site
-String HOST2 = "fabiang.de";
+String HOST2 = "";
 
 //different public variables
 int runs = 1;
