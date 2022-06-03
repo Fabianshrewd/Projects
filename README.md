@@ -19,3 +19,8 @@ Games created from Scratch.
 ```
 Games made with pygame.
 ```
+
+## Ti-Nspire
+```
+Programs for Ti-Nspire
+```
